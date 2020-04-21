@@ -57,6 +57,7 @@ class MessageThread: Codable, Equatable {
             case senderID
             case text
             case timestamp
+            case messageID
         }
         init(text: String, sender: Sender, timestamp: Date = Date(), messageID: String = UUID().uuidString) {
             self.text = text
@@ -65,15 +66,18 @@ class MessageThread: Codable, Equatable {
             self.timestamp = timestamp
             self.messageId = messageID
         }
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            let text = try container.decode(String.self, forKey: .text)
-            let displayName = try container.decode(String.self, forKey: .displayName)
-            let senderID = try container.decode(String.self, forKey: .senderID)
-            let timestamp = try container.decode(Date.self, forKey: .timestamp)
-            let sender = Sender(senderId: senderID, displayName: displayName)
-            self.init(text: text, sender: sender, timestamp: timestamp)
-        }
+       init(from decoder: Decoder) throws {
+                   let container = try decoder.container(keyedBy: CodingKeys.self)
+                   // VI
+                   let text = try container.decode(String.self, forKey: .text)
+                   let displayName = try container.decode(String.self, forKey: .displayName)
+                   let timestamp = try container.decode(Date.self, forKey: .timestamp)
+                   // V2
+                   let senderID = (try? container.decode(String.self, forKey: .senderID)) ?? UUID().uuidString
+                   let messageID = (try? container.decode(String.self, forKey: .messageID)) ?? UUID().uuidString
+                   let sender = Sender(senderId: senderID, displayName: displayName)
+                   self.init(text: text, sender: sender, timestamp: timestamp, messageID: messageID)
+               }
         func encode(to encoder: Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
             try container.encode(displayName, forKey: .displayName)

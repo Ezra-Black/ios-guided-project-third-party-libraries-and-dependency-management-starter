@@ -22,11 +22,11 @@ class MessageDetailViewController: UIViewController {
     
     @IBAction func sendMessage(_ sender: Any) {
         
-        guard let senderName = senderNameTextField.text,
+        guard let sender = messageThreadController?.currentUser,
             let messageText = messageTextView.text,
             let messageThread = messageThread else { return }
         
-        messageThreadController?.createMessage(in: messageThread, withText: messageText, sender: senderName, completion: {
+        messageThreadController?.createMessage(in: messageThread, withText: messageText, sender: sender, completion: {
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }
