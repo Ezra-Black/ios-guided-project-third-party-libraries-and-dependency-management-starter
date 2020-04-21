@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageKit
 
 class MessageThreadsTableViewController: UITableViewController {
 
@@ -25,6 +26,28 @@ class MessageThreadsTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            if let currentUserDictionary = UserDefaults.standard.value(forKey: "currentUser") as? [String : String], let currentUser = Sender(dictionary: currentUserDictionary) {
+    //            self.messageThreadController.currentUser = currentUser
+            } else {
+                let alert = UIAlertController(title: "Set a username", message: nil, preferredStyle: .alert)
+                var usernameTextField: UITextField!
+                alert.addTextField { (textField) in
+                    textField.placeholder = "Username:"
+                    usernameTextField = textField
+                }
+                alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { (_) in
+                    let displayName = usernameTextField.text ?? "No name"
+                    let id = UUID().uuidString
+                    let sender = Sender(senderId: id, displayName: displayName)
+                    UserDefaults.standard.set(sender.dictionaryRepresentation, forKey: "currentUser")
+        //            self.messageThreadController.currentUser = sender
+                }))
+                present(alert, animated: true, completion: nil)
+            }
+        }
     
     // MARK: - Actions
     
