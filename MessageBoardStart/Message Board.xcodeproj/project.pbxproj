@@ -15,11 +15,10 @@
 		4612B5DC211AB6C500E7FF73 /* MessageThreadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612B5DB211AB6C500E7FF73 /* MessageThreadController.swift */; };
 		4643602A211AB90900E7FF73 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46436029211AB90900E7FF73 /* HTTPMethod.swift */; };
 		46436030211ABC3700E7FF73 /* MessageThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643602F211ABC3700E7FF73 /* MessageThreadsTableViewController.swift */; };
-		46436033211ABC5800E7FF73 /* MessageThreadDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46436032211ABC5800E7FF73 /* MessageThreadDetailTableViewController.swift */; };
-		46436035211ABC6B00E7FF73 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46436034211ABC6B00E7FF73 /* MessageDetailViewController.swift */; };
 		8378AE70244F58870088D849 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8378AE6E244F58870088D849 /* MessageKit.framework */; };
 		8378AE71244F58880088D849 /* InputBarAccessoryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8378AE6F244F58870088D849 /* InputBarAccessoryView.framework */; };
 		8378AE74244F61F10088D849 /* Sender+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378AE73244F61F10088D849 /* Sender+UserDefaults.swift */; };
+		8378AE76244F6AA70088D849 /* MessageThreadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378AE75244F6AA70088D849 /* MessageThreadDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +32,10 @@
 		4612B5DB211AB6C500E7FF73 /* MessageThreadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadController.swift; sourceTree = "<group>"; };
 		46436029211AB90900E7FF73 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		4643602F211ABC3700E7FF73 /* MessageThreadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadsTableViewController.swift; sourceTree = "<group>"; };
-		46436032211ABC5800E7FF73 /* MessageThreadDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadDetailTableViewController.swift; sourceTree = "<group>"; };
-		46436034211ABC6B00E7FF73 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		8378AE6E244F58870088D849 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
 		8378AE6F244F58870088D849 /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = "<group>"; };
 		8378AE73244F61F10088D849 /* Sender+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sender+UserDefaults.swift"; sourceTree = "<group>"; };
+		8378AE75244F6AA70088D849 /* MessageThreadDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageThreadDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				4643602F211ABC3700E7FF73 /* MessageThreadsTableViewController.swift */,
-				46436032211ABC5800E7FF73 /* MessageThreadDetailTableViewController.swift */,
-				46436034211ABC6B00E7FF73 /* MessageDetailViewController.swift */,
+				8378AE75244F6AA70088D849 /* MessageThreadDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -237,10 +234,9 @@
 			files = (
 				4612B5DC211AB6C500E7FF73 /* MessageThreadController.swift in Sources */,
 				4612B5DA211AB66600E7FF73 /* MessageThread.swift in Sources */,
+				8378AE76244F6AA70088D849 /* MessageThreadDetailViewController.swift in Sources */,
 				4643602A211AB90900E7FF73 /* HTTPMethod.swift in Sources */,
 				46436030211ABC3700E7FF73 /* MessageThreadsTableViewController.swift in Sources */,
-				46436035211ABC6B00E7FF73 /* MessageDetailViewController.swift in Sources */,
-				46436033211ABC5800E7FF73 /* MessageThreadDetailTableViewController.swift in Sources */,
 				4612B5C8211AB41100E7FF73 /* AppDelegate.swift in Sources */,
 				8378AE74244F61F10088D849 /* Sender+UserDefaults.swift in Sources */,
 			);
