@@ -30,7 +30,7 @@ class MessageThreadsTableViewController: UITableViewController {
     override func viewDidLoad() {
             super.viewDidLoad()
             if let currentUserDictionary = UserDefaults.standard.value(forKey: "currentUser") as? [String : String], let currentUser = Sender(dictionary: currentUserDictionary) {
-    //            self.messageThreadController.currentUser = currentUser
+               self.messageThreadController.currentUser = currentUser
             } else {
                 let alert = UIAlertController(title: "Set a username", message: nil, preferredStyle: .alert)
                 var usernameTextField: UITextField!
@@ -43,7 +43,7 @@ class MessageThreadsTableViewController: UITableViewController {
                     let id = UUID().uuidString
                     let sender = Sender(senderId: id, displayName: displayName)
                     UserDefaults.standard.set(sender.dictionaryRepresentation, forKey: "currentUser")
-        //            self.messageThreadController.currentUser = sender
+                   self.messageThreadController.currentUser = sender
                 }))
                 present(alert, animated: true, completion: nil)
             }
